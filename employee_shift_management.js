@@ -46,3 +46,19 @@ function calculateTotalHours(employeeName){
 console.log(`Total hours for John: ${calculateTotalHours('John')}`) // Outputs the results to test functionality
 
 //Task 5
+function listAvailableEmployees(day){
+    //Filters employees to find the ones who do not have shifts on a particular day
+    let availableEmployees = employees.filter(employee => {
+        return !employee.shifts.some(shift => shift.day === day)
+    })
+    // Checks to see if any employees are available
+    if (availableEmployees.length > 0 ) {{
+        let names = availableEmployees.map(employee => employee.name)
+        console.log (`On ${day}, the following employees are available ${employees.name}`)
+    }} else{
+        //Output message if no employees are available
+        console.log(`On ${day}, no employees are available`)
+    }
+
+}
+listAvailableEmployees('Monday')
