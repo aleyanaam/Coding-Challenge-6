@@ -27,3 +27,22 @@ function displayEmployeeShifts(employees) {
 }
 
 console.log(displayEmployeeShifts(employees));
+
+//Task 4
+function calculateTotalHours(employeeName){
+    // Finds the employee in the array
+    let employee = employees.find(person => person.name === employeeName)
+    // Checks if the employee has a shift
+    if (employee && employee.shifts){
+        // Calculates the total hours for the employee
+        return employee.shifts.reduce((total,shift) => total + shift.hours)
+    }else{
+        //If the employee does not have a shift 0 is returned
+        return 0
+    }
+    
+
+}
+console.log(`Total hours for John: ${calculateTotalHours('John')}`) // Outputs the results to test functionality
+
+//Task 5
