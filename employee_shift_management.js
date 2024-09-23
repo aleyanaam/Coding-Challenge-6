@@ -28,6 +28,25 @@ function displayEmployeeShifts(employees) {
 
 console.log(displayEmployeeShifts(employees));
 
+//Task 3
+function assignShift(employeeName,day, hours){
+    //Finds the employee
+    let employee = employees.find(person => person.name ===employeeName)
+    //Checks if a shift has already been assigned
+    let assignedShift = employee.shifts.find(shift => shift.day === day)
+    if (assignedShift){
+        console.log (`${employeeName} has an assigned shift`)
+        return;
+    }
+    //Adds the shift if the employee doesn't have one already
+    employee.shifts.push(
+        {day: day,
+         hours: hours}
+    )
+    console.log(`${employeeName} has been assigned a shift on ${day} for ${hours},hours}`)
+}
+
+
 //Task 4
 function calculateTotalHours(employeeName){
     // Finds the employee in the array
